@@ -8,10 +8,13 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'KulibinTrade',
-
+        'language'=>'ru',
 	// preloading 'log' component
 	'preload'=>array('log'),
-
+'aliases' => array(
+        'bootstrap' => realpath(__DIR__ . '/../extensions/bootstrap'), // change this if necessary
+    'yiiwheels' => realpath(__DIR__ . '/../extensions/yiiwheels'), // change if necessary
+    ),
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -20,10 +23,33 @@ return array(
                 //'application.modules.yiiadmin.models.*',
                 'application.modules.user.components.*',
                 'ext.yiiext.*',
+            'bootstrap.helpers.TbHtml',
+            'bootstrap.helpers.TbArray',
+        'bootstrap.behaviors.TbWidget',
+        'bootstrap.widgets.*'
 	),
 
 	'modules'=>array(
-                  // 'user',
+            'comment'=>array(
+            'class'=>'ext.comment-module.CommentModule',
+            'commentableModels'=>array(
+                // define commentable Models here (key is an alias that must be lower case, value is the model class name)
+                'post'=>'Post'
+            ),
+            // set this to the class name of the model that represents your users
+            'userModelClass'=>'User',
+            // set this to the username attribute of User model class
+            'userNameAttribute'=>'username',
+            // set this to the email attribute of User model class
+            'userEmailAttribute'=>'email',
+            // you can set controller filters that will be added to the comment controller {@see CController::filters()}
+//          'controllerFilters'=>array(),
+            // you can set accessRules that will be added to the comment controller {@see CController::accessRules()}
+//          'controllerAccessRules'=>array(),
+            // you can extend comment class and use your extended one, set path alias here
+//          'commentModelClass'=>'comment.models.Comment',
+        ),
+                  'admin',
             'user'=>array(
             # encrypting method (php hash function)
             'hash' => 'md5',
@@ -58,6 +84,7 @@ return array(
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'123',
+                    'generatorPaths' => array('bootstrap.gii'),
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
@@ -79,16 +106,22 @@ return array(
 			'allowAutoLogin'=>true,
                         'loginUrl' => array('/user/login'),
 		),
+            'bootstrap' => array(
+            'class' => 'bootstrap.components.TbApi',   
+        ),
+            'yiiwheels' => array(
+            'class' => 'yiiwheels.YiiWheels',   
+        ),
 		// uncomment the following to enable URLs in path-format
 		
-		'urlManager'=>array(
+		/*'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-		),
+		),*/
 		'shoppingCart' =>
              array(
           'class' => 'ext.yiiext.EShoppingCart',
@@ -105,6 +138,8 @@ return array(
 			'password' => '123',
 			'charset' => 'utf8',
                         'tablePrefix' => 'tbl_',
+                   /* 'class'=>'CDbConnection',
+                    'connectionString'=>'sqlite:protected/modules/yiiadmin/data/yiiadmin.db',*/
 		),
 		
 		'errorHandler'=>array(
