@@ -30,7 +30,7 @@ class Pages extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('page_title, page_conent, page_status, cat_id', 'required'),
-			array('page_created, page_status, cat_id', 'numerical', 'integerOnly'=>true),
+			array(' page_status, cat_id', 'numerical', 'integerOnly'=>true),
 			array('page_title', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -96,8 +96,8 @@ class Pages extends CActiveRecord
 	}
    public function beforeSave()
            {
-       if($this->isNewRecord)
-           $this->page_created=  time ();
+       if($this->isNewRecord)        
+           $this->page_created=  date('Y-m-d H:i:s');
        return parent::beforeSave();
            }
 

@@ -3,10 +3,7 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle=Yii::app()->name . ' - Contact Us';
-$this->breadcrumbs=array(
-	'Contact',
-);
+
 ?>
 
 <h1>Contact Us</h1>
@@ -79,7 +76,7 @@ If you have business inquiries or other questions, please fill out the following
 	</div>
 
 <?php $this->endWidget(); ?>
-
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2840.5359553589833!2d33.52278684868774!3d44.60651581394665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409524c87dea4a6f%3A0x5ca97b8fbbe4ca40!2zMjAg0JLQtdC70LjQutCwINCc0L7RgNGB0YzQutCwINCy0YPQuy4sINCh0LXQstCw0YHRgtC-0L_QvtC70Yw!5e0!3m2!1sru!2sua!4v1419292621728" width="600" height="450" frameborder="0" style="border:0"></iframe>
 </div><!-- form -->
 
 <?php endif; ?>

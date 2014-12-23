@@ -35,11 +35,11 @@
 		<?php echo $form->error($model,'page_conent'); ?>
 	</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'page_created'); ?>
 		<?php echo $form->textField($model,'page_created'); ?>
 		<?php echo $form->error($model,'page_created'); ?>
-	</div>
+	</div>-->
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'page_status'); ?>

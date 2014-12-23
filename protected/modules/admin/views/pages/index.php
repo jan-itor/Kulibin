@@ -42,7 +42,7 @@ $('.search-form form').submit(function(){
 		'page_title',
 		'page_created'=>  array(
                     'name'=>'created',
-                    'value'=>'date("d.m.Y H:i",$data->page_created)',
+                    'value'=>'date($data->page_created)',
                     'filter'=>FALSE
                 ),
 		'page_status'=>array(

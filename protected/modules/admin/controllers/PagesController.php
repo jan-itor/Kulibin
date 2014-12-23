@@ -6,7 +6,7 @@ class PagesController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	//public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -51,7 +51,7 @@ class PagesController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$this->render('index',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -71,7 +71,7 @@ class PagesController extends Controller
 		{
 			$model->attributes=$_POST['Pages'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->page_id));
+				$this->redirect(array('index','id'=>$model->page_id));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class PagesController extends Controller
 		{
 			$model->attributes=$_POST['Pages'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->page_id));
+				$this->redirect(array('index','id'=>$model->page_id));
 		}
 
 		$this->render('update',array(
