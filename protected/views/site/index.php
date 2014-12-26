@@ -3,11 +3,8 @@
 
 $this->pageTitle=Yii::app()->name;
 ?>
-
-<h1>Вас приветствует магазин автозапчастей <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
-
-<p>Тут вы можете просмотреть и приобрести различные детали как для отечественных, так и для зарубежных автомобилей.</p>
-
+<a href="#"><img src="http://images.cooltext.com/4054067.png" width="1272" height="64" alt="Вас приветствует магазин автозапчастей KulibinTrade" /></a>
+<a href="#"><img src="http://images.cooltext.com/4054079.png" width="3930" height="83" alt="Тут вы можете просмотреть и приобрести различные детали как для отечественных, так и для зарубежных автомобилей." /></a>
  <?php echo TbHtml::carousel(array(
     array('image' => 'images/first.jpg', 'width'=>'870', 'label' => 'Небольшой ассортимент деталей', 'caption' => 'По низким ценам;)'),
     array('image' => 'images/second.jpg', 'label' => 'Свежая партия', 'caption' => 'Оптом скидка'),

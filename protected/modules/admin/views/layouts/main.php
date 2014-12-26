@@ -32,6 +32,7 @@
                                   array('label'=>'Категории', 'url'=>array('/admin/categories')),
                                  array('label'=>'Страницы', 'url'=>array('/admin/pages')),
                                  array('label'=>'Комментарии', 'url'=>array('/admin/comments')),
+                                array('label'=>'Товар(запчасти)', 'url'=>array('/admin/SpareParts')),
                                 array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
                                 array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
                                 array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"), 'visible'=>!Yii::app()->user->isGuest),
