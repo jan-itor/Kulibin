@@ -1,17 +1,7 @@
-<?php
-/* @var $this DefaultController */
 
-$this->breadcrumbs=array(
-	$this->module->id,
-);
-?>
-<h1><?php echo $this->uniqueId . '/' . $this->action->id; ?></h1>
+<h1>Добро пожаловать, администратор</h1>
 
 <p>
-This is the view content for action "<?php echo $this->action->id; ?>".
-The action belongs to the controller "<?php echo get_class($this); ?>"
-in the "<?php echo $this->module->id; ?>" module.
+Тут осуществлено управление различными разделами сайта. Добавля и удаляй.Корректируй, унижай! Удачи тебе, властелин запчастей:)
 </p>
-<p>
-You may customize this page by editing <tt><?php echo __FILE__; ?></tt>
-</p>
+<b>P.S. Сильно не переусердствуй;)</b>

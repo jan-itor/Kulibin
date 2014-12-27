@@ -60,13 +60,13 @@ class SpareParts extends CActiveRecord implements IECartPosition
 	{
 		return array(
 			'spare_id' => 'Spare',
-			'spare_name' => 'Spare Name',
-			'spare_image' => 'Spare Image',
-			'spare_descr' => 'Spare Descr',
-			'spare_mark' => 'Spare Mark',
-			'spare_model' => 'Spare Model',
-			'spare_struct' => 'Spare Struct',
-			'spare_price' => 'Spare Price',
+			'spare_name' => 'Название детали',
+			'spare_image' => 'Изображение',
+			'spare_descr' => 'Краткое описание',
+			'spare_mark' => 'Марка автомобиля',
+			'spare_model' => 'Модель автомобиля',
+			'spare_struct' => 'Структура запчасти',
+			'spare_price' => 'Цена',
 		);
 	}
 
@@ -101,7 +101,7 @@ class SpareParts extends CActiveRecord implements IECartPosition
 			'criteria'=>$criteria,
 		));
 	}
-function getId(){
+        function getId(){
             return 'SpareParts'.$this->spare_id;
         }
 

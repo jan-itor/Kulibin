@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create SpareParts</h1>
+<h1>Добавить деталь</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

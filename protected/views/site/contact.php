@@ -6,7 +6,7 @@
 
 ?>
 
-<h1>Contact Us</h1>
+<h1>Наши контакты и местоположение:</h1>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -17,7 +17,7 @@
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+Свяжитесь с ними по электронной почте или по телефонам:+79781092848 <a href="tel:+79780068579">Или по этому номеру</a>
 </p>
 
 <div class="form">
@@ -30,7 +30,7 @@ If you have business inquiries or other questions, please fill out the following
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Поля с <span class="required">*</span> одязательны для заполнения.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -72,7 +72,7 @@ If you have business inquiries or other questions, please fill out the following
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
+		<?php echo CHtml::submitButton('Отправить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

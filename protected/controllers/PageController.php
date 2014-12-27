@@ -8,5 +8,9 @@ class PageController extends Controller
 		$this->render('index',array('models'=>$models));
 	}
 
-	
+	public function actionView($page_id)
+	{
+            $models= Pages::model()->find($page_id);
+		$this->render('index',array('models'=>$models));
+	}
 }
