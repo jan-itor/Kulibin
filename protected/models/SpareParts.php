@@ -38,7 +38,7 @@ class SpareParts extends CActiveRecord implements IECartPosition
 			array('spare_mark, spare_model', 'length', 'max'=>11),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('spare_id, spare_name, spare_descr, spare_mark, spare_model, spare_struct, spare_price', 'safe', 'on'=>'search'),
+			array('spare_id, spare_name, spare_descr, spare_mark, spare_model, spare_struct, spare_price', 'cat_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,6 +50,7 @@ class SpareParts extends CActiveRecord implements IECartPosition
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'category'=>array(self::BELONGS_TO,'Categories','cat_id')
 		);
 	}
 
@@ -96,6 +97,7 @@ class SpareParts extends CActiveRecord implements IECartPosition
 		$criteria->compare('spare_model',$this->spare_model,true);
 		$criteria->compare('spare_struct',$this->spare_struct,true);
 		$criteria->compare('spare_price',$this->spare_price);
+                $criteria->compare('cat_id',$this->cat_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

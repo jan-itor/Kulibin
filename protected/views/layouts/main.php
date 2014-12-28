@@ -52,13 +52,13 @@ return false;
 <?php echo TbHtml::tabs(array(
     array('label' => 'Главная страница', 'url' => array('/site/index')),
     array('label' => 'Новости', 'url' => array('/page/index')),
-    array('label' => 'Запчасти', 'items' => array(
-        array('label' => 'Mercedes', 'url' => '?r=spareParts/mercedes'),
-        array('label' => 'BMW', 'url' => '?r=spareParts/BMW'),
-        array('label' => 'Жигули', 'url' => '?r=spareParts/lada'),
-        TbHtml::menuDivider(),
-        array('label' => 'Все запчасти', 'url' => '?r=spareParts/index'),
-    )),
+    array('label' => 'Запчасти', 'items' => Categories::menu('top')), //array(
+//        array('label' => 'Mercedes', 'url' => '?r=spareParts/mercedes'),
+//        array('label' => 'BMW', 'url' => '?r=spareParts/BMW'),
+//        array('label' => 'Жигули', 'url' => '?r=spareParts/lada'),
+//        TbHtml::menuDivider(),
+//        array('label' => 'Все запчасти', 'url' => '?r=spareParts/index'),
+//    )),
        array('label'=>'Админка', 'url'=>array('/admin'),'visible'=>Yii::app()->user->name=="admin"),
         array('label'=>'О нас', 'url'=>array('/site/page', 'view'=>'about')),
 	array('label'=>'Контакты', 'url'=>array('/site/contact')),
@@ -68,22 +68,7 @@ return false;
        array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>Yii::app()->getModule('user')->t("Logout").' ('.Yii::app()->user->name.')', 'visible'=>!Yii::app()->user->isGuest), 
         
 )); ?>
-       <div class="cart_tovary">
-    Корзина товаров.
-    <div class="col_tovarov">
-   <?php 
-       $i = 0;
-       foreach(Yii::app()->shoppingCart as $position){ 
-           $i++;
-       }
-       if($i==0)
-           echo 'Пусто.';
-      
-       echo 'Товаров: '.$i.'<br />';
-       echo 'На сумму:'.Yii::app()->shoppingCart->getCost();
-   ?>     
-    </div> 
-</div>    
+       
 	<?php echo $content; ?>
 
 	<div class="clear"></div>

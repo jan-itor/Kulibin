@@ -2,7 +2,7 @@
 ?><div class="ext-comment-not-loggedin">
 	Sorry, you have to login to leave a comment.
 </div><?php } else { ?>
-<div id="ext-comment-form-<?php echo $comment->isNewRecord ? 'new' : 'edit-'.$comment->id; ?>" class="form">
+<div id="ext-comment-form-<?php echo $comment->isNewRecord ? 'new' : 'edit-'.$comment->comm_id; ?>" class="form">
 
 <?php $form = $this->beginWidget('CActiveForm', array(
 	'id'=>'ext-comment-form',
@@ -14,9 +14,9 @@
 	echo $form->errorSummary($comment); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($comment,'message'); ?>
-		<?php echo $form->textArea($comment,'message',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($comment,'message'); ?>
+		<?php echo $form->labelEx($comment,'com_content'); ?>
+		<?php echo $form->textArea($comment,'com_content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($comment,'com_content'); ?>
 	</div>
 
 	<div class="row buttons">

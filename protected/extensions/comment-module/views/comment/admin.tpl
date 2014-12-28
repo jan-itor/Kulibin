@@ -30,9 +30,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>[
-		'id',
-		'message',
-		'userId',
+		'com_id',
+		'com_content',
+		'user_id',
 		[
 			'class'=>'CButtonColumn'
 		]

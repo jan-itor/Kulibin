@@ -80,7 +80,7 @@ class Comment extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'comments';
+		return 'tbl_comments';
 	}
 
 	public function behaviors()
@@ -135,7 +135,7 @@ class Comment extends CActiveRecord
 	public function relations()
 	{
 		return array(
-			'user' => array(self::BELONGS_TO, $this->module->userModelClass, 'userId'),
+			'tbl_user' => array(self::BELONGS_TO, $this->module->userModelClass, 'userId'),
 		);
 	}
 

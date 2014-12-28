@@ -34,7 +34,8 @@ return array(
             'class'=>'ext.comment-module.CommentModule',
             'commentableModels'=>array(
                 // define commentable Models here (key is an alias that must be lower case, value is the model class name)
-                'post'=>'Post'
+                'post'=>'Post',
+                'page'=>'Pages'
             ),
             // set this to the class name of the model that represents your users
             'userModelClass'=>'User',

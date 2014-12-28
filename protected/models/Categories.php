@@ -89,7 +89,15 @@ class Categories extends CActiveRecord
                 {
                     return CHtml::listData(self::model()->findAll(),'cat_id','cat_title');
                 }
-
+ public static function menu($position)
+                {
+                       $models=self::model()->findAllByAttributes(array('cat_position'=>$position));
+                       $array=array();
+                       foreach ($models as $one){
+                           $array[]= array('label'=>$one->cat_title,'url'=>array('spareParts/index/id/'.$one->cat_id));
+                       }
+                    return $array;
+                }
         /**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

@@ -20,7 +20,18 @@ class Pages extends CActiveRecord
 	{
 		return '{{pages}}';
 	}
-
+    public function behaviors() {
+        return array(
+            'commentable' => array(
+                'class' => 'ext.comment-module.behaviors.CommentableBehavior',
+                // name of the table created in last step
+                'mapTable' => 'tbl_news_comments',
+                // name of column to related model id in mapTable
+                'mapRelatedColumn' => 'new_id'
+            ),
+       );
+        
+        }
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -111,4 +122,5 @@ class Pages extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+        
 }

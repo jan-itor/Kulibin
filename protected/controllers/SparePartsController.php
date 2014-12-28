@@ -2,10 +2,11 @@
 
 class SparePartsController extends Controller
 {
-	public function actionIndex()
+	public function actionIndex($id)
 	{
-            $tovar = SpareParts::model()->findAll();
-		$this->render('index',array('tovar'=>$tovar));
+            $tovar = SpareParts::model()->findAllByAttributes(array('cat_id'=>$id));
+            $category= Categories::model()->findByPk($id);
+		$this->render('index',array('tovar'=>$tovar,'category'=>$category));
 	}
         public function actionAddtovar()
 	{
@@ -23,23 +24,12 @@ class SparePartsController extends Controller
                 yii::app()->end();
               //  $this->render('addtovar',array('model'=>$model));
 	}
-        public function actionMercedes()
+        public function actionView($spare_id)
 	{
-            $tovar = SpareParts::model()->findAll('spare_mark=:spare_mark', array(':spare_mark'=>'Mercedes'));
-		$this->render('mercedes',array('tovar'=>$tovar));
+            $models= SpareParts::model()->findByPk($spare_id);
+            $this->render('view',array('models'=>$models));
 	}
-        public function actionBMW()
-	{
-            $tovar = SpareParts::model()->findAll('spare_mark=:spare_mark', array(':spare_mark'=>'BMW'));
-		$this->render('mercedes',array('tovar'=>$tovar));
-	}
-        public function actionLada()
-	{
-            $tovar = SpareParts::model()->findAll('spare_mark=:spare_mark', array(':spare_mark'=>'ВАЗ'));
-		$this->render('mercedes',array('tovar'=>$tovar));
-	}
-	// Uncomment the following methods and override them if needed
-	/*
+        /*
 	public function filters()
 	{
 		// return the filter configuration for this controller, e.g.:

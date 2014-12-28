@@ -10,7 +10,7 @@ class PageController extends Controller
 
 	public function actionView($page_id)
 	{
-            $models= Pages::model()->find($page_id);
-		$this->render('index',array('models'=>$models));
+            $models= Pages::model()->findByPk($page_id);
+            $this->render('view',array('models'=>$models));
 	}
 }

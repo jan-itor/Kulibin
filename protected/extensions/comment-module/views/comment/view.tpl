@@ -3,8 +3,8 @@
 {$this->widget('zii.widgets.CDetailView', [
 	'data'=>$model,
 	'attributes'=>[
-		'id',
-		'message',
-		'userId'
+		'com_id',
+		'com_content',
+		'user_id'
 	]
 ], true)}

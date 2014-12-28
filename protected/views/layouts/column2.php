@@ -1,4 +1,3 @@
-<?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
 <div class="span-19">
 	<div id="content">
@@ -12,7 +11,7 @@
 			'title'=>'Operations',
 		));
 		$this->widget('zii.widgets.CMenu', array(
-			'items'=>$this->menu,
+			  'items'=>  Categories::menu('left'),
 			'htmlOptions'=>array('class'=>'operations'),
 		));
 		$this->endWidget();
